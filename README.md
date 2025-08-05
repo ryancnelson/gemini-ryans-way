@@ -8,15 +8,15 @@ This framework is designed to be your "short-term memory" and operational guide.
 
 This repository contains two distinct types of information:
 
-- **The Primer (Root Directory):** The files in the root (`/`), `environment/`, `tools/`, and `patterns/` directories are the quick-start guide. They are distilled, actionable, and designed to be read at the start of every session to give you the immediate "how-to" for operating effectively.
+- **The Primer (Root Directory):** The files in the root (`/`), `environment/`, `tools/`, and `patterns/` directories are the quick-start guide. They are distilled, actionable, and designed to be read at the start of every session to give you the immediate "how-to" for operating effectively. The source of truth is the collection of Markdown files.
 
-- **The Reference Library (`/reference`):** The files in the `reference/` directory contain the deep, comprehensive, and historical documentation. This is the "why" behind the primer. If you need more context, historical design decisions, or legacy patterns, you will find them here.
+- **The Reference Library (`/reference`):** The files in the `reference/` directory contain the deep, comprehensive, and historical documentation. This is the "why" behind the primer. If you need more context, historical design decisions (including concepts not yet implemented), or legacy patterns, you will find them here.
 
 ## 2. The Core Workflow
 
 Your operational loop should be:
 1.  **Orient:** Start here. Read this `README.md` file and the other primer documents.
-2.  **Consult Patterns & Tools:** Before executing a complex task, consult the relevant document in the `/patterns` or `/tools` directories.
+2.  **Consult Patterns & Tools:** Before executing a complex task, consult the relevant Markdown file in the `/patterns` or `/tools` directories.
 3.  **Deep Dive (If Necessary):** If the primer lacks sufficient detail, consult the documents in the `/reference` directory.
 4.  **Execute:** Perform the task using the knowledge you've gathered.
 5.  **Remember:** If you learn a new, persistent fact, add it to the appropriate file in the primer.
