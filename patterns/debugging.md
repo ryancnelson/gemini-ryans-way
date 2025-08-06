@@ -2,6 +2,17 @@
 
 This pattern codifies the lessons learned from debugging the database proxy. When a connection hangs, follow these steps in order.
 
+## Secure Access Best Practice: Use SSM Session Manager
+
+Before debugging, consider the best way to access an instance. While SSH with a key pair works, **AWS Systems Manager (SSM) Session Manager is the preferred, more secure method.**
+
+- **How it Works:** It provides a secure, browser-based or CLI shell without needing SSH keys or open SSH ports.
+- **Requirements:** The EC2 instance **must** be launched with an IAM Instance Profile that has the `AmazonSSMManagedInstanceCore` policy.
+- **Command:** `aws ssm start-session --target <instance-id>`
+- **Lesson Learned:** We failed to do this in our staging test, forcing us to use an SSH key. For production systems, always prefer SSM.
+
+---
+
 ### 1. Isolate the Service
 - **Test Locally:** Can the service (e.g., HAProxy) connect to its backend when triggered from `localhost`?
 - **Result:** If this fails, the problem is the service's configuration. If it succeeds, the problem is in the network path.
