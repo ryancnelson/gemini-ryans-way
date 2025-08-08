@@ -103,17 +103,7 @@ According to Cognee knowledge:
 - Use the `mcp_llm_integration.sh` script for shell-based integration
 - Enables LLM access to external tools and data sources
 
-## AWS Credentials Integration
 
-### Setup for LLM/MCP Tools
-```bash
-# Ensure AWS credentials are configured
-cat ~/.aws/credentials
-cat ~/.aws/config
-
-# LLM tools should automatically use these for AWS-based models (like Bedrock Nova)
-llm -m nova-pro "Question using AWS Bedrock model"
-```
 
 ## Practical Debugging Workflow
 
@@ -175,31 +165,7 @@ EOF
 - **gemini-2.0-flash**: Fast Google model, good balance of speed/capability
 - **gemini-1.5-pro-latest**: Large context window (1M tokens), multimodal
 
-### Google Gemini Models
-You have access to Google's Gemini models via API key in `gemini.api.key.txt`:
 
-```bash
-# Method 1: Direct llm command
-export LLM_GEMINI_KEY=$(cat gemini.api.key.txt)
-llm -m gemini-2.5-pro "Your question here"
-
-# Method 2: Using helper script (recommended)
-./gemini_helper.sh "Your question here"
-./gemini_helper.sh gemini-2.5-pro "Complex analysis task"
-```
-
-**Key Gemini Models Available:**
-- `gemini-2.5-pro` - Latest, most capable model
-- `gemini-2.5-flash` - Fast, high-performance version
-- `gemini-2.0-flash` - Good balance (default in helper script)
-- `gemini-1.5-pro-latest` - 1 million token context window
-- `gemini-2.0-flash-thinking-exp-*` - Experimental reasoning models
-
-**Gemini Strengths:**
-- **Massive context window** (1M tokens in 1.5 Pro) - can process entire codebases
-- **Native multimodality** - handles text, images, video, audio seamlessly
-- **Fast processing** with Mixture-of-Experts architecture
-- **Different perspective** from OpenAI models for cross-validation
 
 ### Cognee Search Optimization
 - Use specific technical terms
