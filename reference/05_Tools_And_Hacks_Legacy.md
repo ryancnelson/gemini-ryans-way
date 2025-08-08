@@ -34,8 +34,9 @@ ssh -l ryan biggie "/home/ryan/devel/cognee-quickstart/cognee-search 'how to use
 ### Cognee Processing
 ```bash
 # After adding content, run this to update the knowledge graph
-ssh -l ryan biggie "/home/ryan/devel/cognee-quickstart/cognee-cognify"
+ssh -l ryan biggie "/home/ryan/devel/cognee-quickstart/cognee-cognify-bg"
 ```
+this runs in the background.   "cognee-cognify"  (without the "-bg" suffix) will run it in foreground if you want to see the output.
 
 ## LLM CLI Tool - Multiple AI Models
 
